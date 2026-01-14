@@ -1,0 +1,15 @@
+# Python
+Backend/.venv/
+Backend/__pycache__/
+Backend/**/__pycache__/
+Backend/*.pyc
+Backend/db.sqlite3
+
+# Angular
+Frontend/chat_app_frontend/node_modules/
+Frontend/chat_app_frontend/dist/
+Frontend/chat_app_frontend/.angular/
+
+# IDE
+.vscode/
+.idea/
