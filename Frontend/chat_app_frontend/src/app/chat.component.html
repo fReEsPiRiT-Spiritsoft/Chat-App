@@ -1,0 +1,34 @@
+<div class="chat-container">
+  <div class="chat-header">
+    Chat-App
+  </div>
+  
+  <div class="chat-input-area">
+    <input 
+      [ngModel]="name()" 
+      (ngModelChange)="name.set($event)" 
+      placeholder="Dein Name...">
+    <input 
+      [ngModel]="message()" 
+      (ngModelChange)="message.set($event)" 
+      placeholder="Nachricht eingeben..."
+      (keyup.enter)="sendChat()">
+    <button (click)="sendChat()">Nachricht senden</button>
+  </div>
+  
+  <div class="chat-messages">
+    @if (chats().length === 0) {
+      <div class="empty-state">
+        Noch keine Nachrichten... 
+      </div>
+    }
+    <ul>
+      @for (chat of chats(); track chat.id) {
+        <li>
+          <strong>{{chat.name}}</strong>: {{chat.message}}
+          <em>{{chat.created_at | date:'short'}}</em>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

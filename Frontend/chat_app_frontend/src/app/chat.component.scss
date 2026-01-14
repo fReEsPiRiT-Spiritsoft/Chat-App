@@ -1,0 +1,112 @@
+.chat-container {
+  max-width: 500px;
+  margin: 20px auto;
+  font-family: 'Tahoma', 'Verdana', sans-serif;
+  background: linear-gradient(to bottom, #e8f4ff 0%, #b8d8f8 100%);
+  border: 3px solid #0066cc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.chat-header {
+  background: linear-gradient(to bottom, #0099ff 0%, #0066cc 100%);
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  &::before {
+    font-size: 18px;
+  }
+}
+
+.chat-input-area {
+  padding: 15px;
+  background: #f0f8ff;
+  border-bottom: 2px solid #0066cc;
+  
+  input {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border: 2px solid #99ccff;
+    border-radius: 3px;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 13px;
+    
+    &:focus {
+      outline: none;
+      border-color: #0066cc;
+      background: white;
+    }
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to bottom, #ffd700 0%, #ffaa00 100%);
+    border: 2px solid #cc8800;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'Tahoma', sans-serif;
+    
+    &:hover {
+      background: linear-gradient(to bottom, #ffee00 0%, #ffcc00 100%);
+    }
+    
+    &:active {
+      background: linear-gradient(to bottom, #ffaa00 0%, #ff8800 100%);
+    }
+  }
+}
+
+.chat-messages {
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: white;
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: linear-gradient(to right, #e8f4ff 0%, #f0f8ff 100%);
+    border-left: 4px solid #0066cc;
+    border-radius: 4px;
+    font-size: 13px;
+    
+    strong {
+      color: #0066cc;
+      font-weight: bold;
+      
+      &::before {
+        content: "👤 ";
+      }
+    }
+    
+    em {
+      color: #666;
+      font-size: 11px;
+      display: block;
+      margin-top: 4px;
+    }
+  }
+}
+
+.empty-state {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+  font-style: italic;
+}
